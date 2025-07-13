@@ -35,9 +35,14 @@ const navigationItems: NavigationItem[] = [
 
 interface StudentNavigationProps {
   currentPath?: string;
+  onNavigate?: (page: string) => void;
 }
 
-const StudentNavigation = ({ currentPath = '/student' }: StudentNavigationProps) => {
+const StudentNavigation = ({ currentPath = '/student', onNavigate }: StudentNavigationProps) => {
+  const getPageFromPath = (href: string) => {
+    if (href === '/student') return 'dashboard';
+    return href.split('/').pop() || 'dashboard';
+  };
   return (
     <nav className="space-y-2">
       <div className="mb-6">
@@ -69,7 +74,10 @@ const StudentNavigation = ({ currentPath = '/student' }: StudentNavigationProps)
             )}
             asChild
           >
-            <a href={item.href}>
+            <div 
+              onClick={() => onNavigate?.(getPageFromPath(item.href))}
+              className="cursor-pointer"
+            >
               <div className="flex items-center justify-between w-full">
                 <div className="flex items-center gap-3">
                   <Icon className="h-5 w-5" />
@@ -81,7 +89,7 @@ const StudentNavigation = ({ currentPath = '/student' }: StudentNavigationProps)
                   </span>
                 )}
               </div>
-            </a>
+            </div>
           </Button>
         );
       })}

@@ -43,9 +43,14 @@ const navigationItems: NavigationItem[] = [
 
 interface AdminNavigationProps {
   currentPath?: string;
+  onNavigate?: (page: string) => void;
 }
 
-const AdminNavigation = ({ currentPath = '/admin' }: AdminNavigationProps) => {
+const AdminNavigation = ({ currentPath = '/admin', onNavigate }: AdminNavigationProps) => {
+  const getPageFromPath = (href: string) => {
+    if (href === '/admin') return 'dashboard';
+    return href.split('/').pop() || 'dashboard';
+  };
   return (
     <nav className="space-y-2">
       <div className="mb-6">
@@ -83,7 +88,10 @@ const AdminNavigation = ({ currentPath = '/admin' }: AdminNavigationProps) => {
             )}
             asChild
           >
-            <a href={item.href}>
+            <div 
+              onClick={() => onNavigate?.(getPageFromPath(item.href))}
+              className="cursor-pointer"
+            >
               <div className="flex items-center justify-between w-full">
                 <div className="flex items-center gap-3">
                   <Icon className={cn(
@@ -101,7 +109,7 @@ const AdminNavigation = ({ currentPath = '/admin' }: AdminNavigationProps) => {
                   </span>
                 )}
               </div>
-            </a>
+            </div>
           </Button>
         );
       })}
