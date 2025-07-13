@@ -20,6 +20,7 @@ import {
 import StudentDashboard from './StudentDashboard';
 import TeacherDashboard from './TeacherDashboard';
 import AdminDashboard from './AdminDashboard';
+import InstallAppButton from '../components/InstallAppButton';
 
 type UserType = 'guest' | 'student' | 'teacher' | 'admin';
 
@@ -82,6 +83,7 @@ const Index = () => {
           </div>
           
           <div className="flex items-center gap-3">
+            <InstallAppButton />
             <Button variant="outline" size="sm">
               تسجيل الدخول
             </Button>
