@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
@@ -15,7 +16,10 @@ import {
   TrendingUp,
   Database,
   Bell,
-  FileCheck
+  FileCheck,
+  ShoppingBag,
+  Baby,
+  BookOpen
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -33,6 +37,9 @@ const navigationItems: NavigationItem[] = [
   { icon: FileText, label: 'مراقبة المحتوى', href: '/admin/content-moderation', badge: 3 },
   { icon: FileCheck, label: 'مراجعة الاختبارات', href: '/admin/exam-review', badge: 12 },
   { icon: Brain, label: 'الإشراف على الذكاء الاصطناعي', href: '/admin/ai-supervision' },
+  { icon: ShoppingBag, label: 'متجر الأدوات الدراسية', href: '/admin/store' },
+  { icon: Baby, label: 'قسم ما قبل المدرسة', href: '/admin/preschool' },
+  { icon: BookOpen, label: 'الدورات والأنشطة', href: '/admin/courses' },
   { icon: CreditCard, label: 'إدارة الاشتراكات والخطط', href: '/admin/subscriptions' },
   { icon: BarChart3, label: 'التقارير والتحليلات', href: '/admin/analytics' },
   { icon: AlertTriangle, label: 'البلاغات والشكاوى', href: '/admin/reports', badge: 5, important: true },
@@ -51,6 +58,7 @@ const AdminNavigation = ({ currentPath = '/admin', onNavigate }: AdminNavigation
     if (href === '/admin') return 'dashboard';
     return href.split('/').pop() || 'dashboard';
   };
+
   return (
     <nav className="space-y-2">
       <div className="mb-6">
@@ -62,7 +70,7 @@ const AdminNavigation = ({ currentPath = '/admin', onNavigate }: AdminNavigation
             </div>
             <div>
               <p className="font-medium">المشرف العام</p>
-              <p className="text-sm text-muted-foreground">إدارة النظام</p>
+              <p className="text-sm text-muted-foreground">إدارة My Math</p>
               <div className="flex items-center gap-2 mt-1">
                 <div className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">
                   مدير النظام
@@ -116,24 +124,24 @@ const AdminNavigation = ({ currentPath = '/admin', onNavigate }: AdminNavigation
 
       {/* Admin Quick Stats */}
       <div className="mt-8 space-y-3">
-        <h3 className="text-sm font-medium text-muted-foreground">إحصائيات النظام</h3>
+        <h3 className="text-sm font-medium text-muted-foreground">إحصائيات My Math</h3>
         <div className="space-y-2">
           <div className="bg-primary/10 rounded-lg p-3">
             <div className="flex justify-between items-center">
               <span className="text-sm">إجمالي المدرسين</span>
-              <span className="text-xl font-bold text-primary">1,247</span>
+              <span className="text-xl font-bold text-primary">850</span>
             </div>
           </div>
           <div className="bg-educational/10 rounded-lg p-3">
             <div className="flex justify-between items-center">
               <span className="text-sm">إجمالي الطلاب</span>
-              <span className="text-xl font-bold text-educational">15,683</span>
+              <span className="text-xl font-bold text-educational">12,500</span>
             </div>
           </div>
           <div className="bg-success/10 rounded-lg p-3">
             <div className="flex justify-between items-center">
-              <span className="text-sm">المعاملات اليوم</span>
-              <span className="text-xl font-bold text-success">342</span>
+              <span className="text-sm">مبيعات المتجر</span>
+              <span className="text-xl font-bold text-success">1,240</span>
             </div>
           </div>
           <div className="bg-destructive/10 rounded-lg p-3">
@@ -157,9 +165,13 @@ const AdminNavigation = ({ currentPath = '/admin', onNavigate }: AdminNavigation
             <span className="text-sm">قاعدة البيانات</span>
             <div className="w-2 h-2 bg-success rounded-full"></div>
           </div>
-          <div className="flex items-center justify-between p-2 bg-warning/10 rounded">
-            <span className="text-sm">خدمة الذكاء الاصطناعي</span>
-            <div className="w-2 h-2 bg-warning rounded-full"></div>
+          <div className="flex items-center justify-between p-2 bg-success/10 rounded">
+            <span className="text-sm">المساعد الذكي</span>
+            <div className="w-2 h-2 bg-success rounded-full"></div>
+          </div>
+          <div className="flex items-center justify-between p-2 bg-success/10 rounded">
+            <span className="text-sm">المتجر الإلكتروني</span>
+            <div className="w-2 h-2 bg-success rounded-full"></div>
           </div>
         </div>
       </div>

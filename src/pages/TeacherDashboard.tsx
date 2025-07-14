@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TeacherNavigation from '../components/TeacherNavigation';
+import AIAssistant from '../components/AIAssistant';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
@@ -20,6 +21,7 @@ import {
   AlertCircle,
   CheckCircle,
   ArrowLeft,
+  Calculator,
   Brain,
   Award,
   UserPlus
@@ -61,10 +63,10 @@ const TeacherDashboard = () => {
       <header className="bg-card border-b border-border shadow-sm sticky top-0 z-40">
         <div className="flex items-center justify-between px-6 h-16">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-r from-educational to-primary rounded-lg flex items-center justify-center">
-              <Award className="h-5 w-5 text-white" />
+            <div className="w-10 h-10 bg-gradient-to-r from-primary to-educational rounded-xl flex items-center justify-center">
+              <Calculator className="h-6 w-6 text-white" />
             </div>
-            <h1 className="text-xl font-bold text-primary">منصة التعلم - لوحة المدرس</h1>
+            <h1 className="text-xl font-bold text-primary">My Math - لوحة المدرس</h1>
           </div>
           
           <div className="flex items-center gap-3">
@@ -72,12 +74,12 @@ const TeacherDashboard = () => {
               العودة للرئيسية
             </Button>
             <Button variant="educational" size="sm">
-              <UserPlus className="h-4 w-4 ml-2" />
-              دعوة طلاب جدد
+              <Brain className="h-4 w-4 ml-2" />
+              المساعد الذكي
             </Button>
             <div className="flex items-center gap-2 bg-muted rounded-lg px-3 py-2">
               <div className="w-8 h-8 bg-educational rounded-full flex items-center justify-center">
-                <span className="text-white text-sm font-semibold">س</span>
+                <Award className="h-4 w-4 text-white" />
               </div>
               <span className="text-sm font-medium">د. سارة أحمد</span>
             </div>
@@ -99,8 +101,16 @@ const TeacherDashboard = () => {
         {/* Main Content */}
         <main className="flex-1 p-6">
           {renderContent()}
+          
+          {/* AI Assistant for Teacher */}
+          <div className="mt-8">
+            <AIAssistant position="inline" context="teacher" />
+          </div>
         </main>
       </div>
+
+      {/* Fixed AI Assistant */}
+      <AIAssistant position="fixed" context="teacher" />
     </div>
   );
 };
