@@ -35,42 +35,42 @@ const Index = () => {
 
   // Demo data for the landing page
   const stats = [
-    { label: 'مدرس رياضيات', value: '850+', icon: Award },
-    { label: 'طالب نشط', value: '12,500+', icon: Users },
-    { label: 'درس تفاعلي', value: '18,000+', icon: BookOpen },
-    { label: 'نسبة نجاح', value: '97%', icon: TrendingUp },
+    { label: 'مدرس متخصص', value: '2,850+', icon: Award },
+    { label: 'طالب نشط', value: '45,500+', icon: Users },
+    { label: 'مادة تعليمية', value: '28,000+', icon: BookOpen },
+    { label: 'نسبة نجاح', value: '98%', icon: TrendingUp },
   ];
 
   const features = [
     {
       icon: Brain,
-      title: 'مساعد ذكي للرياضيات',
-      description: 'حل المسائل والشرح التفاعلي بالذكاء الاصطناعي'
+      title: 'مساعد ذكي متعدد المواد',
+      description: 'حلول وشروحات تفاعلية بالذكاء الاصطناعي لجميع المواد الدراسية'
     },
     {
-      icon: Calculator,
-      title: 'أدوات رياضية متقدمة',
-      description: 'آلات حاسبة ذكية ومحرر معادلات تفاعلي'
+      icon: GraduationCap,
+      title: 'مدرسين متخصصين',
+      description: 'نخبة من المدرسين المعتمدين في جميع المواد والمراحل التعليمية'
     },
     {
       icon: Calendar,
-      title: 'حصص مباشرة مخصصة',
-      description: 'دروس فردية وجماعية مع أفضل مدرسي الرياضيات'
+      title: 'حصص مباشرة تفاعلية',
+      description: 'دروس فردية وجماعية مع Google Meet ومتابعة مباشرة'
     },
     {
       icon: Star,
-      title: 'تتبع التقدم الذكي',
-      description: 'تحليل الأداء وتوصيات مخصصة لكل طالب'
+      title: 'تتبع التقدم والنتائج',
+      description: 'تحليل شامل للأداء وتقارير تفصيلية للطلاب والأهالي'
     },
     {
       icon: Baby,
-      title: 'رياضيات للأطفال (3-5 سنوات)',
-      description: 'ألعاب تعليمية ممتعة لتعلم الأرقام والأشكال'
+      title: 'تعليم ما قبل المدرسة',
+      description: 'برامج تعليمية مخصصة للأطفال من سن 3-5 سنوات'
     },
     {
       icon: ShoppingBag,
-      title: 'متجر الأدوات الدراسية',
-      description: 'أدوات رياضية ومكتبية عالية الجودة'
+      title: 'متجر الأدوات التعليمية',
+      description: 'أدوات ومستلزمات دراسية ومكتبية عالية الجودة'
     }
   ];
 
@@ -95,7 +95,7 @@ const Index = () => {
             <div className="w-10 h-10 bg-gradient-to-r from-primary to-educational rounded-xl flex items-center justify-center shadow-lg">
               <Calculator className="h-6 w-6 text-white" />
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold text-primary font-cairo">My Math</h1>
+            <h1 className="text-xl sm:text-2xl font-bold text-primary font-cairo">أكاديمية العرب للتعلم</h1>
           </div>
           
           <div className="flex items-center gap-2 sm:gap-3">
@@ -116,10 +116,10 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-5xl font-bold mb-4 sm:mb-6 animate-fade-in-up">
-              My Math - منصة تعلم الرياضيات الذكية
+              أكاديمية العرب للتعلم - منصة التعليم الذكية
             </h2>
             <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-primary-foreground/90 animate-fade-in-up">
-              تعلم الرياضيات بطريقة ذكية وممتعة مع مساعد AI مخصص ومدرسين متخصصين
+              منصة تعليمية عربية متعددة المدرسين مع AI مخصص لجميع المواد والمراحل الدراسية
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-scale-in">
               <Button 
@@ -169,9 +169,9 @@ const Index = () => {
       <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
-            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-4">مميزات My Math</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-4">مميزات أكاديمية العرب للتعلم</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-              منصة شاملة لتعلم الرياضيات مع أحدث التقنيات والذكاء الاصطناعي
+              منصة تعليمية شاملة متعددة المدرسين مع أحدث التقنيات والذكاء الاصطناعي
             </p>
           </div>
           
@@ -198,7 +198,7 @@ const Index = () => {
       <section className="py-16 sm:py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
-            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-4">جرب My Math الآن</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-4">جرب أكاديمية العرب للتعلم</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
               استكشف لوحات التحكم المختلفة واكتشف قوة التعلم الذكي
             </p>
@@ -261,11 +261,11 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <div className="flex items-center justify-center mb-6">
             <Sparkles className="h-8 w-8 text-yellow-300 ml-3" />
-            <h3 className="text-3xl sm:text-4xl font-bold">ابدأ رحلتك مع My Math</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold">ابدأ رحلتك التعليمية معنا</h3>
             <Sparkles className="h-8 w-8 text-yellow-300 mr-3" />
           </div>
-          <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-            انضم إلى آلاف الطلاب والمدرسين الذين يحققون التميز في الرياضيات معنا
+           <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
+            انضم إلى آلاف الطلاب والمدرسين الذين يحققون التميز الأكاديمي في جميع المواد
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button 
@@ -298,10 +298,10 @@ const Index = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-primary to-educational rounded-xl flex items-center justify-center">
                 <Calculator className="h-6 w-6 text-white" />
               </div>
-              <span className="text-lg sm:text-xl font-bold text-primary">My Math</span>
+              <span className="text-lg sm:text-xl font-bold text-primary">أكاديمية العرب</span>
             </div>
             <p className="text-sm sm:text-base text-muted-foreground text-center">
-              © 2024 My Math. جميع الحقوق محفوظة.
+              © 2024 أكاديمية العرب للتعلم. جميع الحقوق محفوظة.
             </p>
           </div>
         </div>
