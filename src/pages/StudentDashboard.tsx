@@ -20,7 +20,6 @@ import {
   ShoppingBag,
   ListChecks,
   Calendar,
-   presentation,
   Presentation,
   LayoutDashboard,
   LayoutList,
