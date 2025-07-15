@@ -5,6 +5,7 @@ import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
+import PaymentMethods from '../components/PaymentMethods';
 import { 
   User, 
   Star, 
@@ -17,11 +18,14 @@ import {
   BookOpen,
   ArrowLeft,
   Play,
-  ExternalLink
+  ExternalLink,
+  CheckCircle
 } from 'lucide-react';
 
 const TeacherProfile = () => {
   const { id } = useParams();
+  const [showPayment, setShowPayment] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
   
   // Dummy teacher data
   const teacherData = {
@@ -35,6 +39,7 @@ const TeacherProfile = () => {
     experience: '10 سنوات خبرة',
     bio: 'مدرس معتمد في الكيمياء الدولية بخبرة 10 سنوات في تدريس منهج IGCSE و Cambridge. حاصل على شهادة الماجستير في الكيمياء التطبيقية من جامعة القاهرة. أساعد الطلاب على فهم المفاهيم الكيميائية المعقدة بطريقة سهلة ومبسطة.',
     subjects: ['كيمياء IGCSE', 'كيمياء Cambridge', 'كيمياء AS Level', 'كيمياء A Level'],
+    monthlyPrice: 450,
     achievements: [
       'شهادة Cambridge المعتمدة',
       'شهادة Zoom Certified Educator',
@@ -61,6 +66,19 @@ const TeacherProfile = () => {
     ]
   };
 
+  const handleSubscribeClick = () => {
+    setShowPayment(true);
+  };
+
+  const handlePaymentComplete = () => {
+    setIsSubscribed(true);
+    setShowPayment(false);
+    // التنقل للحصص المسجلة
+    setTimeout(() => {
+      window.location.href = '/student/courses';
+    }, 1500);
+  };
+
   const renderStars = (rating: number) => {
     const stars = [];
     const fullStars = Math.floor(rating);
@@ -81,6 +99,52 @@ const TeacherProfile = () => {
     
     return stars;
   };
+
+  if (showPayment) {
+    return (
+      <div className="min-h-screen bg-background rtl">
+        {/* Header */}
+        <header className="bg-card border-b border-border">
+          <div className="container mx-auto px-4 py-4">
+            <Button variant="ghost" onClick={() => setShowPayment(false)} className="mb-4">
+              <ArrowLeft className="h-4 w-4 ml-2" />
+              العودة لملف المدرس
+            </Button>
+          </div>
+        </header>
+
+        <div className="container mx-auto px-4 py-8">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-primary mb-2">الاشتراك في حصص {teacherData.name}</h1>
+            <p className="text-muted-foreground">اختر طريقة الدفع المناسبة لك</p>
+          </div>
+
+          <PaymentMethods 
+            onPaymentComplete={handlePaymentComplete}
+            totalAmount={teacherData.monthlyPrice}
+            itemName={`الاشتراك الشهري - ${teacherData.name}`}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if (isSubscribed) {
+    return (
+      <div className="min-h-screen bg-background rtl flex items-center justify-center">
+        <Card className="card-educational p-8 text-center max-w-md">
+          <CheckCircle className="h-16 w-16 text-success mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-primary mb-2">تم الاشتراك بنجاح!</h2>
+          <p className="text-muted-foreground mb-4">
+            تم تأكيد اشتراكك في حصص {teacherData.name}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            جاري التحويل إلى صفحة الحصص المسجلة...
+          </p>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background rtl">
@@ -127,10 +191,19 @@ const TeacherProfile = () => {
                   <Badge key={index} variant="default" className="bg-educational text-educational-foreground">{subject}</Badge>
                 ))}
               </div>
+
+              <div className="bg-primary/10 rounded-lg p-4 mb-4">
+                <div className="text-2xl font-bold text-primary">{teacherData.monthlyPrice} ج.م</div>
+                <div className="text-sm text-muted-foreground">الاشتراك الشهري</div>
+              </div>
             </div>
 
             <div className="flex flex-col gap-3">
-              <Button size="lg" className="bg-gradient-to-r from-primary to-educational">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-primary to-educational"
+                onClick={handleSubscribeClick}
+              >
                 اشترك بالحصة
               </Button>
               <Button variant="outline" size="lg">
