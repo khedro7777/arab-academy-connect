@@ -105,6 +105,50 @@ const DUMMY_TEACHERS = [
     image: '/placeholder.svg',
     experience: '15 سنة خبرة',
     students: 267
+  },
+  {
+    id: 5,
+    name: 'أ. فاطمة علي',
+    subject: 'لغة عربية',
+    grade: 'الثاني الثانوي',
+    education: 'التعليم المصري - عربي',
+    rating: 4.9,
+    image: '/placeholder.svg',
+    experience: '12 سنة خبرة',
+    students: 189
+  },
+  {
+    id: 6,
+    name: 'د. عمر خالد',
+    subject: 'أحياء',
+    grade: 'الثالث الثانوي',
+    education: 'IGCSE',
+    rating: 4.7,
+    image: '/placeholder.svg',
+    experience: '9 سنوات خبرة',
+    students: 134
+  },
+  {
+    id: 7,
+    name: 'أ. مريم سالم',
+    subject: 'تاريخ',
+    grade: 'الأول الثانوي',
+    education: 'التعليم المصري - لغات',
+    rating: 4.5,
+    image: '/placeholder.svg',
+    experience: '7 سنوات خبرة',
+    students: 98
+  },
+  {
+    id: 8,
+    name: 'د. يوسف إبراهيم',
+    subject: 'جغرافيا',
+    grade: 'الثاني الإعدادي',
+    education: 'التعليم المصري - عربي',
+    rating: 4.6,
+    image: '/placeholder.svg',
+    experience: '11 سنة خبرة',
+    students: 145
   }
 ];
 
@@ -114,6 +158,7 @@ interface SearchFilters {
   grade: string;
   subject: string;
   certificate: string;
+  teacherName: string;
 }
 
 const AdvancedSearchEngine = () => {
@@ -122,7 +167,8 @@ const AdvancedSearchEngine = () => {
     educationType: '',
     grade: '',
     subject: '',
-    certificate: ''
+    certificate: '',
+    teacherName: ''
   });
   const [searchResults, setSearchResults] = useState<typeof DUMMY_TEACHERS>([]);
   const [showResults, setShowResults] = useState(false);
@@ -133,7 +179,8 @@ const AdvancedSearchEngine = () => {
       return (
         (!filters.subject || teacher.subject.includes(filters.subject)) &&
         (!filters.grade || teacher.grade.includes(filters.grade)) &&
-        (!filters.educationType || teacher.education.includes(filters.educationType))
+        (!filters.educationType || teacher.education.includes(filters.educationType)) &&
+        (!filters.teacherName || teacher.name.includes(filters.teacherName))
       );
     });
     
@@ -171,6 +218,21 @@ const AdvancedSearchEngine = () => {
         </h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+          {/* Teacher Name Search */}
+          <div>
+            <label className="block text-sm font-medium mb-2">اسم المدرس</label>
+            <Select value={filters.teacherName} onValueChange={(value) => setFilters({...filters, teacherName: value})}>
+              <SelectTrigger>
+                <SelectValue placeholder="اختر المدرس" />
+              </SelectTrigger>
+              <SelectContent>
+                {DUMMY_TEACHERS.map(teacher => (
+                  <SelectItem key={teacher.id} value={teacher.name}>{teacher.name}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
           {/* Education Stage */}
           <div>
             <label className="block text-sm font-medium mb-2">المرحلة الدراسية</label>
@@ -302,7 +364,7 @@ const AdvancedSearchEngine = () => {
                 </div>
 
                 <Button 
-                  variant="educational" 
+                  variant="outline" 
                   className="w-full"
                   onClick={() => window.location.href = `/teacher-profile/${teacher.id}`}
                 >
