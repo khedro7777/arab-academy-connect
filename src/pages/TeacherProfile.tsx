@@ -124,7 +124,7 @@ const TeacherProfile = () => {
 
               <div className="flex flex-wrap gap-2 mb-6">
                 {teacherData.subjects.map((subject, index) => (
-                  <Badge key={index} variant="educational">{subject}</Badge>
+                  <Badge key={index} variant="default" className="bg-educational text-educational-foreground">{subject}</Badge>
                 ))}
               </div>
             </div>

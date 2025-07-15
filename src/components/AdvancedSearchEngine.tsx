@@ -280,7 +280,7 @@ const AdvancedSearchEngine = () => {
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between">
                     <span className="text-sm">المادة:</span>
-                    <Badge variant="educational">{teacher.subject}</Badge>
+                    <Badge variant="default" className="bg-educational text-educational-foreground">{teacher.subject}</Badge>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-sm">الصف:</span>

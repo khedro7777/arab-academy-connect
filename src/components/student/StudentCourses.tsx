@@ -61,7 +61,7 @@ const StudentCourses = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold text-primary">كورساتي</h2>
-        <Badge variant="educational">{courses.length} كورس نشط</Badge>
+        <Badge variant="default" className="bg-educational text-educational-foreground">{courses.length} كورس نشط</Badge>
       </div>
 
       <div className="grid gap-6">

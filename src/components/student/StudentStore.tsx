@@ -94,7 +94,7 @@ const StudentStore = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold text-primary">متجر أكاديمية Mymath</h2>
-        <Badge variant="educational">
+        <Badge variant="default" className="bg-educational text-educational-foreground">
           <ShoppingBag className="h-4 w-4 ml-1" />
           {products.length} منتج
         </Badge>

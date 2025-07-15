@@ -83,7 +83,7 @@ const StudentWallet = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold text-primary">محفظتي</h2>
-        <Badge variant="educational">
+        <Badge variant="default" className="bg-educational text-educational-foreground">
           <Coins className="h-4 w-4 ml-1" />
           {walletData.totalPoints} نقطة
         </Badge>
