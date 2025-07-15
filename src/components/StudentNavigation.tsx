@@ -11,7 +11,9 @@ import {
   CreditCard,
   Clock,
   Trophy,
-  GraduationCap
+  GraduationCap,
+  ShoppingBag,
+  Wallet
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -23,7 +25,7 @@ interface NavigationItem {
 
 const navigationItems: NavigationItem[] = [
   { icon: Home, label: 'الرئيسية', href: '/student' },
-  { icon: BookOpen, label: 'دروسي', href: '/student/lessons', badge: 3 },
+  { icon: BookOpen, label: 'كورساتي', href: '/student/courses', badge: 3 },
   { icon: Calendar, label: 'جدول الحصص', href: '/student/schedule' },
   { icon: FileText, label: 'الاختبارات', href: '/student/exams', badge: 2 },
   { icon: Trophy, label: 'النتائج والدرجات', href: '/student/results' },
@@ -32,6 +34,13 @@ const navigationItems: NavigationItem[] = [
   { icon: User, label: 'الملف الشخصي', href: '/student/profile' },
   { icon: CreditCard, label: 'المدفوعات والاشتراكات', href: '/student/payments' },
 ];
+
+const additionalItems: NavigationItem[] = [
+  { icon: ShoppingBag, label: 'المتجر', href: '/student/store' },
+  { icon: Wallet, label: 'محفظتي', href: '/student/wallet', badge: 180 },
+];
+
+const allNavigationItems = [...navigationItems, ...additionalItems];
 
 interface StudentNavigationProps {
   currentPath?: string;
@@ -60,7 +69,7 @@ const StudentNavigation = ({ currentPath = '/student', onNavigate }: StudentNavi
         </div>
       </div>
 
-      {navigationItems.map((item) => {
+      {allNavigationItems.map((item) => {
         const Icon = item.icon;
         const isActive = currentPath === item.href;
         

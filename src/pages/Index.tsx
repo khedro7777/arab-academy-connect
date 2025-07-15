@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
@@ -27,6 +26,7 @@ import TeacherDashboard from './TeacherDashboard';
 import AdminDashboard from './AdminDashboard';
 import InstallAppButton from '../components/InstallAppButton';
 import AIAssistant from '../components/AIAssistant';
+import AdvancedSearchEngine from '../components/AdvancedSearchEngine';
 
 type UserType = 'guest' | 'student' | 'teacher' | 'admin';
 
@@ -121,27 +121,14 @@ const Index = () => {
             <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-primary-foreground/90 animate-fade-in-up">
               منصة تعليمية عربية متعددة المدرسين مع AI مخصص لجميع المواد والمراحل الدراسية
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-scale-in">
-              <Button 
-                size="xl" 
-                variant="outline" 
-                className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-                onClick={() => setCurrentView('student')}
-              >
-                <Play className="h-5 w-5 ml-2" />
-                ابدأ التعلم الآن
-              </Button>
-              <Button 
-                size="xl" 
-                variant="outline" 
-                className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-                onClick={() => setCurrentView('teacher')}
-              >
-                <Award className="h-5 w-5 ml-2" />
-                انضم كمدرس
-              </Button>
-            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Advanced Search Engine */}
+      <section className="py-8 sm:py-12">
+        <div className="container mx-auto px-4 sm:px-6">
+          <AdvancedSearchEngine />
         </div>
       </section>
 

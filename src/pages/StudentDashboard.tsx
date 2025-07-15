@@ -26,6 +26,9 @@ import {
   ListOrdered,
   LucideIcon
 } from 'lucide-react';
+import StudentCourses from '../components/student/StudentCourses';
+import StudentStore from '../components/student/StudentStore';
+import StudentWallet from '../components/student/StudentWallet';
 
 interface DashboardCardProps {
   title: string;
@@ -40,7 +43,7 @@ const StudentDashboard = () => {
   const renderContent = () => {
     switch (currentPage) {
       case 'courses':
-        return <div className="p-6"><h1 className="text-2xl font-bold">دروسي</h1></div>;
+        return <StudentCourses />;
       case 'assignments':
         return <div className="p-6"><h1 className="text-2xl font-bold">الواجبات</h1></div>;
       case 'exams':
@@ -49,6 +52,10 @@ const StudentDashboard = () => {
         return <div className="p-6"><h1 className="text-2xl font-bold">التقديرات</h1></div>;
       case 'messages':
         return <div className="p-6"><h1 className="text-2xl font-bold">الرسائل</h1></div>;
+      case 'store':
+        return <StudentStore />;
+      case 'wallet':
+        return <StudentWallet />;
       case 'settings':
         return <div className="p-6"><h1 className="text-2xl font-bold">الإعدادات</h1></div>;
       default:
@@ -72,7 +79,11 @@ const StudentDashboard = () => {
             <Button variant="outline" size="sm" onClick={() => window.location.href = '/'}>
               العودة للرئيسية
             </Button>
-            <Button variant="outline" size="sm">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => setCurrentPage('store')}
+            >
               <ShoppingBag className="h-4 w-4 ml-2" />
               المتجر
             </Button>
