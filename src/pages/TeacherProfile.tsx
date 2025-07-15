@@ -73,9 +73,9 @@ const TeacherProfile = () => {
   const handlePaymentComplete = () => {
     setIsSubscribed(true);
     setShowPayment(false);
-    // التنقل للحصص المسجلة
+    // التنقل لجدول المحاضرات
     setTimeout(() => {
-      window.location.href = '/student/courses';
+      window.location.href = '/student/lectures';
     }, 1500);
   };
 
