@@ -66,7 +66,7 @@ const TeacherDashboard = () => {
             <div className="w-10 h-10 bg-gradient-to-r from-primary to-educational rounded-xl flex items-center justify-center">
               <Calculator className="h-6 w-6 text-white" />
             </div>
-            <h1 className="text-xl font-bold text-primary">My Math - لوحة المدرس</h1>
+            <h1 className="text-xl font-bold text-primary">أكاديمية Mymath - لوحة المدرس</h1>
           </div>
           
           <div className="flex items-center gap-3">

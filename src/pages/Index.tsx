@@ -95,7 +95,7 @@ const Index = () => {
             <div className="w-10 h-10 bg-gradient-to-r from-primary to-educational rounded-xl flex items-center justify-center shadow-lg">
               <Calculator className="h-6 w-6 text-white" />
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold text-primary font-cairo">أكاديمية العرب للتعلم</h1>
+            <h1 className="text-xl sm:text-2xl font-bold text-primary font-cairo">أكاديمية Mymath</h1>
           </div>
           
           <div className="flex items-center gap-2 sm:gap-3">
@@ -116,7 +116,7 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-5xl font-bold mb-4 sm:mb-6 animate-fade-in-up">
-              أكاديمية العرب للتعلم - منصة التعليم الذكية
+              أكاديمية Mymath - منصة التعليم الذكية
             </h2>
             <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-primary-foreground/90 animate-fade-in-up">
               منصة تعليمية عربية متعددة المدرسين مع AI مخصص لجميع المواد والمراحل الدراسية
@@ -169,7 +169,7 @@ const Index = () => {
       <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
-            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-4">مميزات أكاديمية العرب للتعلم</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-4">مميزات أكاديمية Mymath</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
               منصة تعليمية شاملة متعددة المدرسين مع أحدث التقنيات والذكاء الاصطناعي
             </p>
@@ -198,7 +198,7 @@ const Index = () => {
       <section className="py-16 sm:py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
-            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-4">جرب أكاديمية العرب للتعلم</h3>
+            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-4">جرب أكاديمية Mymath</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
               استكشف لوحات التحكم المختلفة واكتشف قوة التعلم الذكي
             </p>
@@ -298,10 +298,10 @@ const Index = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-primary to-educational rounded-xl flex items-center justify-center">
                 <Calculator className="h-6 w-6 text-white" />
               </div>
-              <span className="text-lg sm:text-xl font-bold text-primary">أكاديمية العرب</span>
+              <span className="text-lg sm:text-xl font-bold text-primary">أكاديمية Mymath</span>
             </div>
             <p className="text-sm sm:text-base text-muted-foreground text-center">
-              © 2024 أكاديمية العرب للتعلم. جميع الحقوق محفوظة.
+              © 2024 أكاديمية Mymath. جميع الحقوق محفوظة.
             </p>
           </div>
         </div>
